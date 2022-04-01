@@ -10,7 +10,7 @@ const permissions = require('./middleware/acl.js');
 
 authRouter.post('/signup', async (req, res, next) => {
   try {
-    console.log(req);
+    console.log(typeof  req.body);
     let userRecord = await users.create(req.body);
     const output = {
       user: userRecord,
@@ -34,7 +34,7 @@ authRouter.post('/signin', basicAuth, (req, res, next) => {
 authRouter.get(
   '/users',
   bearerAuth,
-  permissions('delete'),
+  permissions('deleteAll'),
   async (req, res, next) => {
     const userRecords = await users.findAll({});
     const list = userRecords.map((user) => user.username);
