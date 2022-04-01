@@ -1,6 +1,6 @@
 'use strict';
 
-const { authDb } = require('../../src/auth/models');
+const { authDb } = require('../src/auth/models');
 
 module.exports = async () => {
   await authDb.sync();

@@ -1,5 +1,5 @@
 'use strict';
 
-const { authDb } = require('../../src/auth/models');
+const { authDb } = require('../src/auth/models');
 
 module.exports = () => authDb.drop();
