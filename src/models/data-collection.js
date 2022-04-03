@@ -17,6 +17,10 @@ class DataCollection {
     }
   }
 
+  getByForeignKey(foreignKey) {
+    return this.model.findAll({ where: foreignKey });
+  }
+
   create(record) {
     return this.model.create(record);
   }
