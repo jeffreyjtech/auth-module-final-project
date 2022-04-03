@@ -2,7 +2,7 @@
 
 module.exports = (capability) => {
   return (req, res, next) => {
-    console.log('Checking capabilities');
+    // console.log('Checking capabilities');
     try {
       if (req.user.capabilities.includes(capability)) {
         next();
