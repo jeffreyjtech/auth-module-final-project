@@ -8,7 +8,14 @@ const Collection = require('./data-collection.js');
 
 const DATABASE_URL = process.env.DATABASE_URL || 'sqlite:.content';
 
-const sequelize = new Sequelize(DATABASE_URL);
+const sequelizeConfig = {
+  dialectOptions: {
+    ssl: true,
+    rejectUnauthorized: false,
+  },
+};
+
+const sequelize = new Sequelize(DATABASE_URL, sequelizeConfig);
 const threads = threadModel(sequelize, DataTypes);
 const replies = replyModel(sequelize, DataTypes);
 
