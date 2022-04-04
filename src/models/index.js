@@ -10,8 +10,10 @@ const DATABASE_URL = process.env.DATABASE_URL || 'sqlite:.content';
 
 const sequelizeConfig = {
   dialectOptions: {
-    ssl: true,
-    rejectUnauthorized: false,
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    }, 
   },
 };
 

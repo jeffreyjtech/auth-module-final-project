@@ -8,8 +8,10 @@ const HEROKU_POSTGRESQL_BLUE_URL = process.env.HEROKU_POSTGRESQL_BLUE_URL || 'sq
 
 const sequelizeConfig = {
   dialectOptions: {
-    ssl: true,
-    rejectUnauthorized: false,
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    }, 
   },
 };
 
